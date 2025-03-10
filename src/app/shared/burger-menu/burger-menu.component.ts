@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styles: ""
 })
 export class BurgerMenuComponent {
+isActive = signal(false);
 
+handleBurgerClick() {
+  this.isActive.set(!this.isActive());
+  console.log('Burger menu clicked');
+}
 }
