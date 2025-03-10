@@ -4,8 +4,15 @@
     <button class="p-8 bg-amber-700">Ouvrir le menu</button>
   </div>
 } @else {
-  <p>le menu est cliqué</p>
-  <div (click)="handleBurgerClick()">
-    <button class="p-8 bg-amber-700">Fermer le menu</button>
+  <div class="bg-mirage-blue h-screen w-10/12">
+    <div (click)="handleBurgerClick()">
+      <button class="p-8 bg-amber-700">Fermer le menu</button>
+    </div>
+    <ul>
+      <li>Pricing</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Schedule a Demo</li>
+    </ul>
   </div>
 }

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Renderer2, inject } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -9,9 +9,14 @@ import { Component, signal } from '@angular/core';
 })
 export class BurgerMenuComponent {
 isActive = signal(false);
+private renderer = inject(Renderer2);
 
 handleBurgerClick() {
   this.isActive.set(!this.isActive());
-  console.log('Burger menu clicked');
+  if (this.isActive()) {
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
+  } else {
+    this.renderer.removeStyle(document.body, 'overflow');
+  }
 }
 }
