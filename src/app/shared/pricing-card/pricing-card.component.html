@@ -1,0 +1,14 @@
+@if (features?.length) {
+  <div>
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <span>${{price |currency }}</span>
+      <ul>
+        @for (feature of features; track feature.name) {
+          <li>{{feature.name}}</li>
+        }
+      </ul>
+      <button>Request Access</button>
+    </div>
+  }
+

@@ -1,1 +1,45 @@
-<p>pricing works!</p>
+<section>
+  <h1>Pricing</h1>
+<app-pricing-card
+title="Free Plan"
+description="Build and test using our core set of products with up to 100 API request"
+[price]= 0
+[features]="[
+  {name: 'transactions', included: true},
+  {name: 'Auth', included: true},
+  {name: 'Identity', included: true},
+  {name: 'Investments', included: false},
+  {name: 'Assets', included: false},
+  {name: 'Liabilities', included: false},
+  {name: 'Income', included: false},
+]">
+</app-pricing-card>
+<app-pricing-card
+title="Basic Plan"
+description= "Launch your project with unlimited request and no contractual minimums"
+[price]= 249
+[features]="[
+  {name: 'transactions', included: true},
+  {name: 'Auth', included: true},
+  {name: 'Identity', included: true},
+  {name: 'Investments', included: true},
+  {name: 'Assets', included: true},
+  {name: 'Liabilities', included: false},
+  {name: 'Income', included: false},
+]">
+</app-pricing-card>
+<app-pricing-card
+title="Premium Plan"
+description="Get tailored solutions, volume pricing, and dedidcated support for your team"
+[price]= 499
+[features]="[
+  {name: 'transactions', included: true},
+  {name: 'Auth', included: true},
+  {name: 'Identity', included: true},
+  {name: 'Investments', included: true},
+  {name: 'Assets', included: true},
+  {name: 'Liabilities', included: true},
+  {name: 'Income', included: true},
+]">
+</app-pricing-card>
+</section>
