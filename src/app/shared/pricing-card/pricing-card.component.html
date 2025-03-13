@@ -1,0 +1,33 @@
+@if (features?.length) {
+  <div class="flex flex-col items-center w-full bg-[#f0f4fa] md:items-start">
+    <h2 class="font-dm-serif-display text-dark-pink text-xl mb-6 font-semibold md:text-2xl">{{title}}</h2>
+    <p class="text-light-san-juan-blue text-center md:text-left">{{description}}</p>
+    <span class="font-dm-serif-display text-san-juan-blue text-5xl font-semibold my-6">{{price | currency }}</span>
+
+    <div class="w-5/6 border-t border-light-san-juan-blue my-4"></div>
+
+    <ul class="flex flex-col items-center md:items-start max-w-xs md:max-w-md mx-auto md:mx-0 pt-4 gap-2">
+      @for (feature of features; track feature.name) {
+        <li class="grid grid-cols-[20px_auto] gap-4 items-center md:justify-start w-full">
+          @if (feature.included) {
+            <img src="/assets/shared/desktop/icon-check.svg" alt="check icon" class="w-4 h-4">
+            <span class="text-san-juan-blue">
+              {{ feature.name }}
+            </span>
+          }
+          @else {
+            <span class="w-4 h-4"></span>
+            <span class="text-light-san-juan-blue">
+              {{ feature.name }}
+            </span>
+          }
+        </li>
+      }
+    </ul>
+
+    <div class="w-5/6 border-t border-light-san-juan-blue my-4"></div>
+    <button class="rounded-3xl border-1 py-2 px-4 text-sm text-san-juan-blue border-light-san-juan-blue my-4">
+      Request Access
+    </button>
+  </div>
+}
