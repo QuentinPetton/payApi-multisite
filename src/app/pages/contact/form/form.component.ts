@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './form.component.html',
   styles: ""
 })
@@ -25,6 +26,9 @@ export class FormComponent {
   })
   onSubmit() {
     console.log(this.submitForm.value);
+  }
+  get name(){
+    return this.submitForm.get('name') as FormControl;
   }
 };
 

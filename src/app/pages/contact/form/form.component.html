@@ -1,10 +1,23 @@
 <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="flex flex-col text-san-juan-blue">
-  <input type="text" placeholder="Name" required formControlName="name" class="border-b border-light-san-juan-blue mx-4 p-4">
-  <input type="email" placeholder="Email" required formControlName="email" class="border-b border-light-san-juan-blue mx-4 p-4">
-  <input type="text" placeholder="Company Name" formControlName="companyName" class="border-b border-light-san-juan-blue mx-4 p-4">
-  <input type="text" placeholder="Title" formControlName="title"class="border-b border-light-san-juan-blue mx-4 p-4">
-  <textarea name="message" id="message" rows="3" placeholder="Message" required formControlName="message" class="border-b border-light-san-juan-blue mx-4 p-4"></textarea>
+  <input type="text" placeholder="Name" formControlName="name" class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer" [ngClass]="{'border-red-500 text-red-500': name.invalid && (name.dirty || name.touched), 'border-green-500': name.valid && (name.dirty)}">
+  @if(name.hasError('required')&&(name.dirty||name.touched)){
+    <span class="text-xs text-red-500 mx-4 px-4 py-2">This field can't be empty</span>
+  }
+  @if(name.hasError('minlength')&&(name.dirty||name.touched)){
+    <span class="text-xs text-red-500 mx-4 px-4 py-2">Name must be at least 3 characters long</span>
+  }
+  @if(name.hasError('maxlength')&&(name.dirty||name.touched)){
+    <span class="text-xs text-red-500 mx-4 px-4 py-2">Name can't be more than 30 characters long</span>
+  }
+  @if(name.hasError('pattern')&&(name.dirty||name.touched)){
+    <span class="text-xs text-red-500 mx-4 px-4 py-2">Name must contain only letters</span>
+  }
+
+  <input type="email" placeholder="Email" formControlName="email" class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer">
+  <input type="text" placeholder="Company Name" formControlName="companyName" class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer">
+  <input type="text" placeholder="Title" formControlName="title"class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer">
+  <textarea name="message" id="message" rows="3" placeholder="Message" formControlName="message" class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer"></textarea>
   <label for="terms">Stay up-to-date with company annoucements and updates to our API</label>
-  <input type="checkbox" name="terms" id="terms" required formControlName="terms">
+  <input type="checkbox" name="terms" id="terms" formControlName="terms">
   <button type="submit" [disabled]="!submitForm.valid" class="rounded-3xl border-1 py-2 px-4 text-sm text-san-juan-blue border-light-san-juan-blue my-4 cursor-pointer">Submit</button>
 </form>
