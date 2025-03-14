@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
+import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -11,11 +10,18 @@ import { Title } from '@angular/platform-browser';
 export class FormComponent {
 
   readonly submitForm =  new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
+    name: new FormControl('', [Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(30),
+      Validators.pattern('^[a-zA-Z ]+$')
+    ]),
+    email: new FormControl('', [Validators.required,
+      Validators.email,
+    ]),
     companyName: new FormControl(''),
     title: new FormControl(''),
-    message: new FormControl('')
+    message: new FormControl(''),
+    terms: new FormControl(false, Validators.requiredTrue)
   })
   onSubmit() {
     console.log(this.submitForm.value);
