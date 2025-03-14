@@ -1,1 +1,10 @@
-<p>form works!</p>
+<form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Name" required formControlName="name">
+  <input type="email" placeholder="Email" required formControlName="email">
+  <input type="text" placeholder="Company Name" formControlName="companyName">
+  <input type="text" placeholder="Title" formControlName="title">
+  <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required formControlName="message"></textarea>
+  <label for="terms">Stay up-to-date with company annoucements and updates to our API</label>
+  <input type="checkbox" name="terms" id="terms"  required>
+  <button type="submit">Submit</button>
+</form>
