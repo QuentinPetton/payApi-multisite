@@ -1,15 +1,23 @@
 <div class="bg-mirage-blue flex flex-col items-center gap-4 py-10 md:flex-row md:justify-between gap px-24">
   <div class="flex flex-col items-center md:flex-row md:gap-12">
-    <img class="cursor-pointer" src="/assets/shared/desktop/logo-white.svg" alt="payapi logo">
+    <a [routerLink]="['/']" >
+      <img class="cursor-pointer" src="/assets/shared/desktop/logo-white.svg" alt="payapi logo">
+    </a>
     <ul class="text-link-water-white text-center py-4 flex flex-col gap-4 md:flex-row md:gap-12">
-      <li>Pricing</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li class="cursor-pointer"><a [routerLink]="['/pricing']">Pricing</a></li>
+      <li class="cursor-pointer"><a [routerLink]="['/about']" >About</a></li>
+      <li class="cursor-pointer"><a [routerLink]="['/contact']">Contact</a></li>
     </ul>
   </div>
   <div class="flex gap-8">
-    <img src="/assets/shared/desktop/facebook.svg" alt="facebook logo">
-    <img src="/assets/shared/desktop/twitter.svg" alt="twitter logo">
-    <img src="/assets/shared/desktop/linkedin.svg" alt="linkedin logo">
+    <a href="https://www.facebook.com">
+      <img src="/assets/shared/desktop/facebook.svg" alt="facebook logo">
+    </a>
+    <a href="https://www.x.com">
+      <img src="/assets/shared/desktop/twitter.svg" alt="twitter logo">
+    </a>
+    <a href="https://www.linkedin.com">
+      <img src="/assets/shared/desktop/linkedin.svg" alt="linkedin logo">
+    </a>
   </div>
 </div>
