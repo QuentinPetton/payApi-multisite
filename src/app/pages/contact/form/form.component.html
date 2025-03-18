@@ -23,9 +23,15 @@
   <input type="text" placeholder="Company Name" formControlName="companyName" class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer">
   <input type="text" placeholder="Title" formControlName="title"class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer">
   <textarea name="message" id="message" rows="3" placeholder="Message" formControlName="message" class="border-b border-light-san-juan-blue mx-4 p-4 cursor-pointer"></textarea>
-  <label for="terms">Stay up-to-date with company annoucements and updates to our API</label>
-  <input type="checkbox" name="terms" id="terms" formControlName="terms">
-  @if(terms.hasError('required')&&(terms.dirty||terms.touched)){
+  <label class="flex items-center p-4 gap-4">
+    <input type="checkbox" formControlName="terms" class="hidden peer">
+    <span class="w-5 h-5  bg-light-san-juan-blue peer-checked:bg-dark-pink flex items-center justify-center relative cursor-pointer ">
+    </span>
+    <img class="hidden peer-checked:block absolute mx-0.5" src="/assets/shared/desktop/icon-check.svg" alt="check icon for terms">
+    <span class="text-san-juan-blue ">Stay up-to-date with company announcements and updates to our API
+    </span>
+  </label>
+  @if(terms.hasError('required')&& terms.touched){
     <span class="text-xs text-red-500 mx-4 px-4 py-2">You must accept the terms and conditions</span>
   }
   <button type="submit" [disabled]="!submitForm.valid" class="rounded-3xl border-1 py-2 px-4 text-sm text-san-juan-blue border-light-san-juan-blue my-4 cursor-pointer">Submit</button>
