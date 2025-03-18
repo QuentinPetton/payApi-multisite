@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { EmailFormComponent } from '../../../shared/email-form/email-form.component';
 
 @Component({
   standalone: true,
   selector: 'app-hero',
-  imports: [],
+  imports: [EmailFormComponent],
   templateUrl: './hero.component.html',
   styles: ""
 })

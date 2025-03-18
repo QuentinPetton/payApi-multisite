@@ -9,8 +9,10 @@
       their accounts to apps they love using our API. We provide developers
       with the tools they need to create easy and accessible experiences
       for their users.</p>
-      <button class="border-2 rounded-3xl py-2 px-4 cursor-pointer hover:bg-link-water-white hover:text-[#1B262F]">About us</button>
-  </div>
+      <a [routerLink]="['/about']">
+        <button class="border-2 rounded-3xl py-2 px-4 cursor-pointer hover:bg-link-water-white hover:text-[#1B262F]">About us</button>
+      </a>
+    </div>
     <div class=" grid grid-cols-2 row-start-1 justify-center gap-x-4 xl:col-start-2 xl:grid-cols-3">
       <img class="self-center" src="/assets/shared/desktop/tesla.svg" alt="logo tesla">
       <img class="self-center" src="/assets/shared/desktop/microsoft.svg" alt="logo microsoft">
