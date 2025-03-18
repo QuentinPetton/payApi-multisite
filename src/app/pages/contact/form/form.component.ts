@@ -26,9 +26,16 @@ export class FormComponent {
   })
   onSubmit() {
     console.log(this.submitForm.value);
+    this.submitForm.reset();
   }
   get name(){
     return this.submitForm.get('name') as FormControl;
+  }
+  get email(){
+    return this.submitForm.get('email') as FormControl;
+  }
+  get terms(){
+    return this.submitForm.get('terms') as FormControl;
   }
 };
 
