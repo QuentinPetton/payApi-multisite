@@ -34,6 +34,6 @@
   @if(terms.hasError('required')&& terms.touched){
     <span class="text-xs text-red-500 mx-4 px-4 py-2">You must accept the terms and conditions</span>
   }
-  <button type="submit" [disabled]="!submitForm.valid" class="rounded-3xl border-1 py-2 px-4 text-sm text-san-juan-blue border-light-san-juan-blue my-4 cursor-pointer">Submit</button>
+  <button type="submit" [disabled]="!submitForm.valid" class="rounded-3xl border-1 py-2 px-4 text-sm text-san-juan-blue border-light-san-juan-blue my-4 cursor-pointer mx-4 w-1/3">Submit</button>
 </form>
 
