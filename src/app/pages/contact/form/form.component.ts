@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { NgClass } from '@angular/common';
 
@@ -9,6 +9,8 @@ import { NgClass } from '@angular/common';
   styles: ""
 })
 export class FormComponent {
+
+  formSent = signal(false);
 
   readonly submitForm =  new FormGroup({
     name: new FormControl('', [Validators.required,
@@ -26,6 +28,7 @@ export class FormComponent {
   })
   onSubmit() {
     console.log(this.submitForm.value);
+    this.formSent.set(true);
     this.submitForm.reset();
   }
   get name(){

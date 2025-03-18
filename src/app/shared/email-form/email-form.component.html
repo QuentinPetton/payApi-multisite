@@ -1,0 +1,24 @@
+<form [formGroup]="emailSubmitForm" (ngSubmit)="handleEmailFormSubmit()"
+class="flex flex-col gap-4 md:flex-row md:gap-0 mt-5 lg:mt-0 md:items-start" >
+  <label for="email"></label>
+  <div class="flex flex-col">
+
+    <input type="text"
+    formControlName ="email"
+    placeholder="Enter email address"
+    class="bg-link-water-white rounded-3xl p-3 pl-5 text-xs drop-shadow-2xl md:pr-20"
+
+    >
+    @if(email?.hasError('required') && email?.touched){
+      <span class="text-xs text-red-500 mx-4 px-4 py-2">This field can't be empty</span>
+    }
+    @if(email?.hasError('email') && email?.touched){
+      <span class="text-xs text-red-500 mx-4 px-4 py-2">Email must be valid</span>
+    }
+    @if(emailSent()){
+      <span class="text-xs text-green-500 mx-4 px-4 py-2">Email sent successfully</span>
+    }
+
+  </div>
+  <button type="submit" [disabled]="emailSubmitForm.invalid" class="bg-dark-pink text-link-water-white rounded-3xl p-3 cursor-pointer text-xs drop-shadow-2xl font-semibold md:-ml-6 md:px-4">Schedule a Demo</button>
+</form>
