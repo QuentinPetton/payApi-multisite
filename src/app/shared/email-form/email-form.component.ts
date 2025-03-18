@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
-import { NgClass } from '@angular/common';
+
+
 
 
 
@@ -11,6 +12,9 @@ import { NgClass } from '@angular/common';
   styles: ""
 })
 export class EmailFormComponent {
+
+  emailSent = signal(false);
+
   readonly emailSubmitForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
   });
@@ -21,6 +25,8 @@ export class EmailFormComponent {
   handleEmailFormSubmit() {
     if (this.emailSubmitForm.valid) {
       console.log(this.emailSubmitForm.value);
+      this.emailSent.set(true);
+      this.emailSubmitForm.reset();
     }
   }
 }
