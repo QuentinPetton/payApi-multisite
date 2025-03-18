@@ -1,11 +1,12 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   standalone: true,
   selector: 'app-pricing-card',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './pricing-card.component.html',
   styles: ""
 })
