@@ -1,10 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
 
-
-
-
-
 @Component({
   selector: 'app-email-form',
   imports: [ReactiveFormsModule],
@@ -24,7 +20,6 @@ export class EmailFormComponent {
   }
   handleEmailFormSubmit() {
     if (this.emailSubmitForm.valid) {
-      console.log(this.emailSubmitForm.value);
       this.emailSent.set(true);
       this.emailSubmitForm.reset();
     }
