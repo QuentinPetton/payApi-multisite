@@ -5,18 +5,18 @@
     <button class="cursor-pointer"><img src="/assets/shared/mobile/menu.svg" alt="open icon menu"></button>
   </nav>
 } @else {
-  <nav class="bg-mirage-blue h-screen w-10/12">
+  <nav class="bg-mirage-blue h-screen w-10/12 ">
     <div class="border-b-1 border-light-san-juan-blue mx-6 pb-6 pt-10 flex justify-end" (click)="handleBurgerClick()">
       <button class="cursor-pointer"><img src="/assets/shared/mobile/close.svg" alt="close icon menu"></button>
     </div>
-    <ul class="text-link-water-white text-center py-4 flex flex-col gap-4 ">
-      <a [routerLink]="['/pricing']" (click)="handleBurgerClick()">
+    <ul class="text-link-water-white text-center py-4 flex flex-col gap-4">
+      <a [routerLink]="['/pricing']" (click)="handleBurgerClick()" class="hover:text-charm-pink">
         <li>Pricing</li>
       </a>
-      <a [routerLink]="['/about']" (click)="handleBurgerClick()">
+      <a [routerLink]="['/about']" (click)="handleBurgerClick()" class="hover:text-charm-pink">
         <li>About</li>
       </a>
-      <a [routerLink]="['contact']" (click)="handleBurgerClick()">
+      <a [routerLink]="['contact']" (click)="handleBurgerClick()" class="hover:text-charm-pink">
         <li>Contact</li>
       </a>
       <a [routerLink]="['/about']" (click)="handleBurgerClick()">
