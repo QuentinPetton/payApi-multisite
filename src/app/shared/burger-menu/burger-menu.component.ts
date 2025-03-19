@@ -1,9 +1,10 @@
 import { Component, signal, Renderer2, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-burger-menu',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './burger-menu.component.html',
   styles: ""
 })
@@ -18,5 +19,9 @@ handleBurgerClick() {
   } else {
     this.renderer.removeStyle(document.body, 'overflow');
   }
+}
+closeBurgerWhenLinkClicked() {
+  this.isActive.set(false);
+  this.renderer.removeStyle(document.body, 'overflow');
 }
 }
