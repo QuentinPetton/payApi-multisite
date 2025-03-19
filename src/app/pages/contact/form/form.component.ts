@@ -27,7 +27,6 @@ export class FormComponent {
     terms: new FormControl(false, Validators.requiredTrue)
   })
   onSubmit() {
-    console.log(this.submitForm.value);
     this.formSent.set(true);
     this.submitForm.reset();
   }
