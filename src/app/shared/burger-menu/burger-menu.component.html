@@ -10,16 +10,16 @@
       <button class="cursor-pointer"><img src="/assets/shared/mobile/close.svg" alt="close icon menu"></button>
     </div>
     <ul class="text-link-water-white text-center py-4 flex flex-col gap-4 ">
-      <a [routerLink]="['/pricing']">
+      <a [routerLink]="['/pricing']" (click)="handleBurgerClick()">
         <li>Pricing</li>
       </a>
-      <a [routerLink]="['/about']">
+      <a [routerLink]="['/about']" (click)="handleBurgerClick()">
         <li>About</li>
       </a>
-      <a [routerLink]="['contact']">
+      <a [routerLink]="['contact']" (click)="handleBurgerClick()">
         <li>Contact</li>
       </a>
-      <a [routerLink]="['/about']">
+      <a [routerLink]="['/about']" (click)="handleBurgerClick()">
         <li><button class="bg-dark-pink text-link-water-white rounded-3xl p-3 px-10 cursor-pointer text-xs drop-shadow-2xl font-semibold md:-ml-6 md:px-4 hover:bg-charm-pink">Schedule a Demo</button></li>
       </a>
     </ul>

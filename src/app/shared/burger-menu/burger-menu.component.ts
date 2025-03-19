@@ -20,4 +20,8 @@ handleBurgerClick() {
     this.renderer.removeStyle(document.body, 'overflow');
   }
 }
+closeBurgerWhenLinkClicked() {
+  this.isActive.set(false);
+  this.renderer.removeStyle(document.body, 'overflow');
+}
 }
