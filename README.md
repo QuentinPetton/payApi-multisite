@@ -15,3 +15,19 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+### Tests
+
+The form components have unit tests to verify the following behaviors:
+
+- The submit button is correctly disabled when the email input is invalid.
+- The submit button is enabled when a valid email is provided.
+- When the form is submitted successfully, the emailSent signal is updated, allowing the confirmation message to be displayed for better user experience.
+  
+To run the test:
+
+```bash
+ng test
+```
+
+This will start the test runner and display the results in the console.
