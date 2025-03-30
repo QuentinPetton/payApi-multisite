@@ -1,11 +1,7 @@
 node_modules
-dist
 .git
 .vscode
 .dockerignore
 Dockerfile
 .gitignore
-angular.json
-pnpm-lock.yaml
-package-lock.json
 
