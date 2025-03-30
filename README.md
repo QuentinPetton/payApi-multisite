@@ -31,3 +31,21 @@ ng test
 ```
 
 This will start the test runner and display the results in the console.
+
+## Docker support
+
+This project includes a Dockerfile to build and serve the production, using Nginx.
+
+### Build the Docker image
+
+```bash
+docker build -t angular-app .
+```
+
+Run the container
+
+```bash
+docker run -p 8080:80 angular-app
+```
+
+Then open your browser at [http://localhost:8080](http://localhost:8080)
