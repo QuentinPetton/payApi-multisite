@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  standalone: true,
   selector: 'app-features',
   imports: [],
   templateUrl: './features.component.html',
-  styles: ""
+  styles: '',
 })
-export class FeaturesComponent {
-
-}
+export class FeaturesComponent {}
