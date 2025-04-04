@@ -2,12 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  standalone: true,
   selector: 'app-partner',
   imports: [RouterLink],
   templateUrl: './partner.component.html',
-  styles: ""
+  styles: '',
 })
-export class PartnerComponent {
-
-}
+export class PartnerComponent {}

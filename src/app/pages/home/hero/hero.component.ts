@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { EmailFormComponent } from '../../../shared/email-form/email-form.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  standalone: true,
   selector: 'app-hero',
-  imports: [EmailFormComponent],
+  imports: [EmailFormComponent, RouterLink],
   templateUrl: './hero.component.html',
-  styles: ""
+  styles: '',
 })
-export class HeroComponent {
-
-}
+export class HeroComponent {}

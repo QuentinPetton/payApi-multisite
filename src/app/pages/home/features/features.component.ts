@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
+import { EmailFormComponent } from '../../../shared/email-form/email-form.component';
 
 @Component({
-  standalone: true,
   selector: 'app-features',
-  imports: [],
+  imports: [EmailFormComponent],
   templateUrl: './features.component.html',
-  styles: ""
+  styles: '',
 })
-export class FeaturesComponent {
-
-}
+export class FeaturesComponent {}

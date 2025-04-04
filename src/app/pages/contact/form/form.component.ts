@@ -1,43 +1,45 @@
 import { Component, signal } from '@angular/core';
-import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
-import { JsonPipe, NgClass } from '@angular/common';
+import {
+  FormControl,
+  ReactiveFormsModule,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-form',
-  imports: [ReactiveFormsModule, NgClass, JsonPipe],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './form.component.html',
-  styles: ""
+  styles: '',
 })
 export class FormComponent {
-
   formSent = signal(false);
 
-  readonly submitForm =  new FormGroup({
-    name: new FormControl('', [Validators.required,
+  readonly submitForm = new FormGroup({
+    name: new FormControl('', [
+      Validators.required,
       Validators.minLength(3),
       Validators.maxLength(30),
-      Validators.pattern('^[a-zA-Z ]+$')
+      Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ\\s'-]+$"),
     ]),
-    email: new FormControl('', [Validators.required,
-      Validators.email,
-    ]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     companyName: new FormControl(''),
     title: new FormControl(''),
     message: new FormControl(''),
-    terms: new FormControl(false, Validators.requiredTrue)
-  })
+    terms: new FormControl(false, Validators.requiredTrue),
+  });
   onSubmit() {
     this.formSent.set(true);
     this.submitForm.reset();
   }
-  get name(){
+  get name() {
     return this.submitForm.get('name') as FormControl;
   }
-  get email(){
+  get email() {
     return this.submitForm.get('email') as FormControl;
   }
-  get terms(){
+  get terms() {
     return this.submitForm.get('terms') as FormControl;
   }
-};
-
+}
