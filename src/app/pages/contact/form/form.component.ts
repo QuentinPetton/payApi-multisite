@@ -21,7 +21,7 @@ export class FormComponent {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(30),
-      Validators.pattern('^[a-zA-Z ]+$'),
+      Validators.pattern("^[a-zA-ZÀ-ÖØ-öø-ÿ\\s'-]+$"),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     companyName: new FormControl(''),
